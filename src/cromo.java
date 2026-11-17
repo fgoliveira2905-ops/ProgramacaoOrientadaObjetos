@@ -1,7 +1,7 @@
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class cromos implements Serializable {
+public class cromo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private int numero;
@@ -13,12 +13,15 @@ public class cromos implements Serializable {
     private boolean emprestado;
     private boolean desaparecido;
 
-    public cromos(int numero, String nome, String categoria, String localizacao, LocalDate dataAquisicao) {
+    public cromo(int numero, String nome, String categoria,
+                  String localizacao, LocalDate dataAquisicao, String estadoConservacao)
+    {
         this.numero = numero;
         this.nome = nome;
         this.categoria = categoria;
         this.localizacao = localizacao;
         this.dataAquisicao = dataAquisicao;
+        this.estadoConservacao = estadoConservacao;
         this.emprestado = false;
         this.desaparecido = false;
     }
