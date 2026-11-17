@@ -37,7 +37,17 @@ public class cromos implements Serializable {
     public void setLocalizacao(String localizacao) { this.localizacao = localizacao; }
 
     public LocalDate getDataAquisicao() { return dataAquisicao; }
-    public void setDataAquisicao(LocalDate dataAquisicao) { this.dataAquisicao = dataAquisicao; }
+    public void setDataAquisicao(LocalDate dataAquisicao) {
+        if (dataAquisicao == null) {
+            throw new IllegalArgumentException("A data não pode estar vazia");
+        }
+        this.dataAquisicao = dataAquisicao;
+    }
+
+    public String getEstadoConservacao() { return this.estadoConservacao; }
+    public void setEstadoConservacao(String EstadoConservacao) {
+        this.estadoConservacao = EstadoConservacao;
+    }
 
     public boolean isEmprestado() { return emprestado; }
     public void setEmprestado(boolean emprestado) { this.emprestado = emprestado; }
