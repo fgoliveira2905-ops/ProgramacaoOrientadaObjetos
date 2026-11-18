@@ -44,6 +44,9 @@ public class cromo implements Serializable {
         if (dataAquisicao == null) {
             throw new IllegalArgumentException("A data não pode estar vazia");
         }
+        if (dataAquisicao.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("A data de aquisição não pode ser no futuro.");
+        }
         this.dataAquisicao = dataAquisicao;
     }
 
